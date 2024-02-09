@@ -14,7 +14,7 @@ def home(request):
         'recipes': recipes,
     })
 
-
+#it will get get the item with ID_Categoryy
 def category(request, category_id):
     recipes = get_list_or_404(
         Recipe.objects.filter(
@@ -22,7 +22,7 @@ def category(request, category_id):
         is_published=True,
         ).order_by('-id')
     )
-
+    #render will return the page that was requested
     return render(request, 'recipes/pages/category.html', context={
         'recipes': recipes,
         'title': f'{recipes[0].category.name} - Category | '

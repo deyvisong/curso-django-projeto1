@@ -8,7 +8,7 @@ class RecipeTestBase(TestCase):
 
     def make_category(self, name='Category'):
         return Category.objects.create(name=name)
-
+    #This functions create an author with the fields that the model/database need.
     def make_author(
         self,
         first_name='user',
@@ -24,7 +24,7 @@ class RecipeTestBase(TestCase):
             password=password,
             email=email,
         )
-
+    #this function create an recipe with the fiels that model/database need.
     def make_recipe(
         self,
         category_data=None,
